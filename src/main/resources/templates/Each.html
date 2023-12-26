@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <H1>模型商品展示</H1>
+<HR/>
+    <p th:each="car : ${cars}" th:text="${car}"> 這裡會顯示模型商品名稱 </p>
+</body>
+</html>

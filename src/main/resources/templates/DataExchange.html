@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p thh:text="${request.getAttribute("mesg")}"> 這邊會由 Spring boot 宣告的變數內容替換掉</p>
+    <p th:text="${session.mesg}"> 這邊會由 Spring boot 宣告的變數內容替換掉</p>
+
+    <h2> Spring Boot thymeleaf 預設會在 request & model 尋找 變數 (如果沒有宣告上一層物件)</h2>
+    request : <p th:text="${mesg}"> 這邊會由 Spring boot 宣告的變數內容替換掉</p>
+    model <p th:text="${mesg}"> 這邊會由 Spring boot 宣告的變數內容替換掉</p>
+    #vars <p th:text="${#vars.mesg}"> 這邊會由 Spring boot 宣告的變數內容替換掉</p>
+
+    <hr/>
+    param <p th:text="${param.mesg}"> 這邊會由 Spring boot 宣告的變數內容替換掉</p>
+    <h3>運算式</h3>
+
+    3 * 5 = <span th:text="${ 3 * 5 }">0</span> <br/>
+    3 &gt 5 = <span th:text="${ 3 > 5 }">0</span> <br/>
+    3 &lt= 5 = <span th:text="${ 3 <= 5 }">0</span> <br/>
+
+<hr>
+
+    3 &gt 5 = <span th:text="${ 3 gt 5 }">0</span> <br/>
+    3 &lt= 5 = <span th:text="${ 3 le 5 }">0</span> <br/>
+    3 == 5 = <span th:text="${ 3 eq 5 }">0</span> <br/>
+
+
+    <hr/>
+    <p th:text="靜態取代"> 這邊會由 Spring boot 宣告的變數內容替換掉</p>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1> IF 判斷式示範</h1>
+    <div th:if="${ isAdmin }" style="background-color: lightblue; width: 300px;height: 100px;" >
+        如果你式網站管理者 你會看到這一塊 Model isAdmin
+    </div>
+    <div th:if="${ session.iamadmin }" style="background-color: lawngreen; width: 300px;height: 100px;" >
+        如果你式網站管理者 你會看到這一塊 session.iamadmin
+    </div>
+    <div th:if="${ 3 lt 5}" style="background-color: yellow; width: 300px;height: 100px;" >
+        這條件 3 &lt; 5 成立才會看到
+    </div>
+
+
+    <h1> IF-ELSE 判斷式示範</h1>
+    <hr/>
+    <div th:if="${ isAdmin }" style="background-color: lightsalmon; width: 300px;height: 100px;" >
+        如果你式網站管理者 你會看到這一塊 Model isAdmin
+    </div>
+    <div th:unless="${ isAdmin }" style="background-color: lightpink; width: 300px;height: 100px;" >
+        因為你不是管理 所以會看到這一塊 Model isAdmin
+    </div>
+
+    <h1> 比對字串方式 : 使用 Thymeleaf 的公用函式</h1>
+    <div th:if="${#strings.equals(param.msg, 'Admin')}">
+        如果傳入的字串式 admin 你會看到這一段 ( 一定要 Admin )
+    </div>
+    <div th:if="${#strings.equalsIgnoreCase(param.msg, 'AdMiN')}">
+        如果傳入的字串式 admin 你會看到這一段 (不分大小寫 只要式 admin 意義的字串)
+    </div>
+<hr>
+
+</body>
+</html>
